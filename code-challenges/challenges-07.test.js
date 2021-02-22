@@ -52,15 +52,24 @@ For example, twoToThe([1,2,3]) returns [2,4,8] because 2 ^ 1 = 2, 2 ^ 2 = 4, and
 
 const forLoopTwoToThe = (arr) => {
   // Solution code here...
-  let num = arr.map((item)=>{
+  // Solution code here...
+  let num0 = [];
+  for(let j=0 ; j<arr.length;j++){
+   if(arr[j] > 0){
     let result = 1;
-
-      for(let i=0;i<item;i++){
-        result = result * 2;
-      }
-    return result ;
-    });
-    return num;
+    for (var i = 0; i < arr[j]; i++){
+      result = result * 2;
+    }
+    num0.push(result);
+  } else{
+    let result = 1;
+    for (var i = 0; i < arr[j] * -1; i++){
+      result = result * .5;
+    }
+    num0.push(result);
+  }
+  }
+return num0;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,10 +81,20 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   // Solution code here...
   let num0 = [];
-  let result = 1;
  arr.forEach(item =>{
-   result = result * 2;
-   num0.push(result);
+  if(item > 0){
+    let result = 1;
+    for (var i = 0; i < item; i++){
+      result = result * 2;
+    }
+    num0.push(result);
+  } else{
+    let result = 1;
+    for (var i = 0; i < item * -1; i++){
+      result = result * .5;
+    }
+    num0.push(result);
+  }
  });
  return num0;
 };
@@ -87,7 +106,24 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 ------------------------------------------------------------------------------------------------ */
 
 const mapTwoToThe = (arr) => {
-  // Solution code here...
+   // Solution code here...
+   let num = arr.map((item)=>{
+    if(item > 0){
+        let result = 1;
+    
+          for(let i=0;i<item;i++){
+            result = result * 2;
+          }
+        return result ;
+    } else {
+      let result = 1;
+        for (var i = 0; i < item * -1; i++){
+          result = result * .5;
+        }
+        return result ;
+    }
+    });
+        return num;
 };
 
 /* ------------------------------------------------------------------------------------------------
