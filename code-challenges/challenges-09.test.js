@@ -20,6 +20,12 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+
+  let updateArr = [];
+  for ( let i=0; i< Object.keys(obj).length; i++){
+    updateArr.push('<li>'+Object.keys(obj)[i] + ': ' + Object.values(obj)[i]+'</li>');
+} 
+return updateArr;
 }
 
 /* ------------------------------------------------------------------------------------------------
