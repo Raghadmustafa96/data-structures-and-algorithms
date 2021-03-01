@@ -9,7 +9,15 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  // Solution code here...
+    // Solution code here...
+    let max = arr.reduce((acc, val) => {
+      if(acc < val){
+        acc = val;
+      }
+      return acc;
+    });
+    return max;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -113,6 +121,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  let arr = [];
+  data.forEach((element, index) => {
+    arr.push({ sales: `${element} cookies`, time: `${hours[index]}` });
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -138,6 +151,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let qan =0;
+  arr.forEach((element, index) => {
+     if(element.store === 'Pet store'){
+       qan = element.items[1].quantity;
+     }
+  });
+return qan;
 };
 
 /* ------------------------------------------------------------------------------------------------
