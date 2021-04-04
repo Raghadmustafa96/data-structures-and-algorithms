@@ -13,13 +13,20 @@ Head : reference of type Node to the first node in a linked list.<br>
 Current is a reference of type Node to the node that is currently being looked at.<br>
 Linked Lists depend on the Next value in each node to guide where the next reference is pointing <br>
 
-## Challenge
+## Challenge 1
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 * Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 * Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
 * Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
 * Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 `"{ a } -> { b } -> { c } -> NULL"`
+
+## Challenge 2
+build a new methods for linked list 
+
+* append(value) which adds a new node with the given value to the end of the list
+* insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+* insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
 
 ## Approach & Efficiency
 
@@ -31,6 +38,9 @@ complixty :
 insert from beginning : time O(1) , space O(1) <br>
 print linked list (toString()) : time complexity is O(n) <br>
 includes : time complexity is O(n) <br>
+append(value) : time complexity is O(n) <br>
+insertBefore(value, newVal) : time complexity is O(n) <br>
+insertAfter(value, newVal) : time complexity is O(n) <br>
 
 ## API
 * insert : takes the value as an argument then adds a new node in the beginning of the linked list 
@@ -43,3 +53,12 @@ The time complexity is O(n)
 The time complexity is O(n)
 
 ![linkedlist](../../assets/linkedlist.PNG)
+
+
+## API 2
+* append(value) adds new node with the given value to the end of the list 
+
+* insertBefore(value, newVal) add a new node with the given newValue immediately before the first value node
+* insertAfter(value, newVal) add a new node with the given newValue immediately after the first value node
+
+![linkedlist2](../../assets/linkedlist2.PNG)
