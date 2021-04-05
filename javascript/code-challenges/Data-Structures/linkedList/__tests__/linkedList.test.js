@@ -88,4 +88,31 @@ describe('Linked List', () => {
     newLinkedList.insertAfter(0,33) ;
     expect(newLinkedList.length).toEqual(10);
   });
+
+  it('should return `Exception` if k is greater than the length of the linked list ', () => {
+    expect(newLinkedList.length).toEqual(10);
+    expect( newLinkedList.kthFromEnd(15)).toEqual('Exception');
+  });
+
+  it('should return `Exception` if k and the length of the list are the same', () => {
+    expect(newLinkedList.length).toEqual(10);
+    expect( newLinkedList.kthFromEnd(10)).toEqual('Exception');
+  });
+
+  it('should return `Exception` if k is not a positive integer', () => {
+    expect( newLinkedList.kthFromEnd(-5)).toEqual('Exception');
+  });
+
+  it('should return the head value if linked list is of a size 1', () => {
+    let newLinked = new LinkedList();
+    newLinked.insert(10);
+    expect(newLinked.toString()).toEqual('{ 10 } -> NULL');
+    expect(newLinked.kthFromEnd(5)).toEqual(10);
+  });
+
+  it('should return the k-th correct value from the end of a linked list.', () => {
+    expect(newLinkedList.toString()).toEqual('{ 333 } -> { 5 } -> { 10 } -> { 7 } -> { 888 } -> { 5555 } -> { 111 } -> { 100 } -> { 200 } -> { 1000 } -> NULL');
+    expect( newLinkedList.kthFromEnd(0)).toEqual(1000);
+    expect( newLinkedList.kthFromEnd(1)).toEqual(200);
+  });
 });

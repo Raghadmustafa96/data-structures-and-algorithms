@@ -14,6 +14,7 @@ Current is a reference of type Node to the node that is currently being looked a
 Linked Lists depend on the Next value in each node to guide where the next reference is pointing <br>
 
 ## Challenge 1
+
 * Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 * Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
 * Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
@@ -22,11 +23,21 @@ Linked Lists depend on the Next value in each node to guide where the next refer
 `"{ a } -> { b } -> { c } -> NULL"`
 
 ## Challenge 2
+
 build a new methods for linked list 
 
 * append(value) which adds a new node with the given value to the end of the list
 * insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
 * insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+## Challenge 3
+
+Write a method for the Linked List class  kthFromEnd(k)  which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+
+                                                    k
+        head -> [1] -> [3] -> [8] -> [2] -> null	0	2
+        head -> [1] -> [3] -> [8] -> [2] -> null	6	Exception
+
 
 ## Approach & Efficiency
 
@@ -41,6 +52,7 @@ includes : time complexity is O(n) <br>
 append(value) : time complexity is O(n) <br>
 insertBefore(value, newVal) : time complexity is O(n) <br>
 insertAfter(value, newVal) : time complexity is O(n) <br>
+kthFromEnd(k) : time complexity is O(n) <br>
 
 ## API
 * insert : takes the value as an argument then adds a new node in the beginning of the linked list 
@@ -62,3 +74,15 @@ The time complexity is O(n)
 * insertAfter(value, newVal) add a new node with the given newValue immediately after the first value node
 
 ![linkedlist2](../../assets/linkedlist2.PNG)
+
+
+## API 3
+* kthFromEnd(k) which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+
+
+![linkedlist2](../../assets/kthFromtheEnd.PNG)
+
+
+
+
+
