@@ -101,6 +101,21 @@ class LinkedList {
       return;
     }
   }
+ 
+  kthFromEnd(k){
+    if(this.length == 1){
+      return this.head.data;
+    } else if(k >= this.length || k < 0 || this.length == 0){
+       return 'Exception';
+    } else {
+      let current = this.head;
+        while(k < this.length -1 ){
+          current = current.next;
+          k++ ;
+        }
+        return current.data;
+    }
+  }
 }
 
 module.exports = LinkedList;
