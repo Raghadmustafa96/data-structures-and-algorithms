@@ -1,38 +1,34 @@
 'use strict';
-
 const LinkedList = require('../Data-Structures/linkedList/linked-list.js');
 
-let firstLl = new LinkedList();
- firstLl.insert(3);
- firstLl.insert(2);
- firstLl.insert(1);
-console.log(firstLl.toString())
+// let firstLl = new LinkedList();
+// firstLl.insert(3);
+// firstLl.insert(2);
+// firstLl.insert(1);
+// console.log(firstLl.toString())
 
+// let secondLl = new LinkedList();
+// secondLl.insert(6);
+// secondLl.insert(5);
+// secondLl.insert(4);
+// console.log(secondLl.toString())
 
-let secondLl = new LinkedList();
-secondLl.insert(6);
-secondLl.insert(5);
-secondLl.insert(4);
-console.log(secondLl.toString())
+module.exports = function zipLists(firstLl, secondLl) {
+  const newLinkedList = new LinkedList();
+  let current1 = firstLl.head;
+  let current2 = secondLl.head;
 
-
-function zipLists (list1,list2){
-    const mergedLL = new LinkedList();
-    let currentNode1 = list1.head;
-    let currentNode2 = list2.head;
-    while(currentNode1 || currentNode2){
-      if(currentNode1){
-        mergedLL.append(currentNode1.data);
-        currentNode1=currentNode1.next;
-      }
-      if(currentNode2){
-        mergedLL.append(currentNode2.data);
-        currentNode2=currentNode2.next;
-      }
+  while (current1 || current2) {
+    if (current1) {
+      newLinkedList.append(current1.data);
+      current1 = current1.next;
     }
-    let str = mergedLL;
-    return str;
+    if (current2) {
+      newLinkedList.append(current2.data);
+      current2 = current2.next;
+    }
   }
+  return newLinkedList;
+}
 
-
-console.log(zipLists(firstLl,secondLl).toString());
+// console.log(zipLists(firstLl, secondLl).toString());
