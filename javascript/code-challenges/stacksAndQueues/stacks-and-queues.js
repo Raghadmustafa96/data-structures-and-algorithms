@@ -41,6 +41,17 @@ class Stack {
             return true;
         } return false;
     }
+
+    toString() {
+        let current = this.top;
+        let str = '';
+        while (current) {
+          str = str + `{ ${current.data} } -> `;
+          current = current.next;
+        }
+        str = str + 'NULL';
+        return str;
+      }
 }
 
 

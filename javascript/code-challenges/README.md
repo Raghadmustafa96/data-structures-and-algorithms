@@ -13,3 +13,4 @@
 | #6 | ll-kth-from-end      |   [ll-kth-from-end](./Data-Structures/linkedList/README.md) |
 | #7 | ll-zip               |   [ll-zip](./llZip/README.md)|
 | #8 | stacksAndQueues      |  [stacksAndQueues](./stacksAndQueues/README.md)|
+| #9 | queue-with-stacks    | [queue-with-stacks](./queueWithStacks/README.md)|
