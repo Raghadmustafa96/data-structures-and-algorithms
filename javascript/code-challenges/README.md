@@ -14,3 +14,4 @@
 | #7 | ll-zip               |   [ll-zip](./llZip/README.md)|
 | #8 | stacksAndQueues      |  [stacksAndQueues](./stacksAndQueues/README.md)|
 | #9 | queue-with-stacks    | [queue-with-stacks](./queueWithStacks/README.md)|
+| #10 | Animal_Shelter    | [Animal_Shelter](./fifoAnimalShelter/README.md)|
