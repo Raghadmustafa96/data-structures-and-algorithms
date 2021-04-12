@@ -96,6 +96,17 @@ class Queue {
             return true;
         } return false;
     }
+
+    toString() {
+        let current = this.front;
+        let str = '';
+        while (current) {
+          str = str + `{ ${current.data} } -> `;
+          current = current.next;
+        }
+        str = str + 'NULL';
+        return str;
+      }
 }
 
 module.exports = {Stack , Queue};
