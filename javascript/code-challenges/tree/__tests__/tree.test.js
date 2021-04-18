@@ -1,6 +1,7 @@
 'use strict';
 const Node = require('../node.js');
-const BinaryTree = require('../tree.js');
+const {BinaryTree} = require('../tree.js');
+const {BinarySearchTree} = require('../tree.js');
 
 describe('Binary Tree', () => {
   let tree;
@@ -37,5 +38,45 @@ describe('Binary Tree', () => {
     const expected = [4, 8, 5, 2, 6, 7, 3, 1];
     const postOrder = tree.postOrder();
     expect(postOrder).toEqual(expected);
+  });
+});
+
+describe('Binary Search Tree', () => {
+  let binaryTree1 = new BinarySearchTree();
+  it('should successfully instantiate empty tree', () => {
+    expect(binaryTree1.root).toEqual(null);
+  });
+
+  it('should  instantiate a tree with a single root node', () => {
+    const data = 20;
+    const root = new Node(data);
+    const newBinaryT = new BinarySearchTree(root);
+    expect(newBinaryT.root.value).toEqual(data);
+  });
+
+  it('should add a root node to existing empty tree', () => {
+    const data = 10;
+    binaryTree1.add(data);
+    expect(binaryTree1.root.value).toEqual(data);
+  });
+
+  it('should add a left child and right child to a single root node', () => {
+    const left = 5;
+    const right = 14;
+
+    binaryTree1.add(right);
+    binaryTree1.add(left);
+
+    expect(binaryTree1.root.left.value).toEqual(left);
+    expect(binaryTree1.root.right.value).toEqual(right);
+  });
+
+  it('should search for a value in the tree', () => {
+    expect(binaryTree1.contains(20)).toBeTruthy();
+  });
+
+  it('should returns exception if search in empty tree', () => {
+    const newTree = new BinarySearchTree();
+    expect(newTree.contains(5)).toEqual('empty');
   });
 });

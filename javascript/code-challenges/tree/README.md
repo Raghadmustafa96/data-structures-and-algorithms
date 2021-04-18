@@ -18,4 +18,7 @@ Define a method named contains that accepts a value, and returns a boolean indic
 ## Approach & Efficiency
 
 
-## API
+ Searching : time complexity is O(h) where h is height of BST.
+
+ Insertion : time complexity is O(h).
+
