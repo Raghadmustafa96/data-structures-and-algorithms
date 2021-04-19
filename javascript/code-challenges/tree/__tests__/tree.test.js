@@ -39,6 +39,10 @@ describe('Binary Tree', () => {
     const postOrder = tree.postOrder();
     expect(postOrder).toEqual(expected);
   });
+
+  it('should return the max value in binary tree', () => {
+    expect(tree.findMaximumValue()).toEqual(8);
+  });
 });
 
 describe('Binary Search Tree', () => {

@@ -38,6 +38,30 @@ class BinaryTree {
         _traverse(this.root);
         return results;
     }
+
+    findMaximumValue() {
+        let findMax = (newNode = this.root) => {
+            if (!this.root) {
+                return 'empty tree';
+            } else {
+                let leftMax;
+                let rightMax;
+                let max = newNode.value;
+
+                if (newNode.left != null) {
+                    leftMax = findMax(newNode.left);
+                    max = (max > leftMax) ? max : leftMax;
+                }
+
+                if (newNode.right != null) {
+                    rightMax = findMax(newNode.right);
+                    max = (max > rightMax) ? max : rightMax;
+                }
+                return max;
+            }
+        }
+        return findMax();
+    }
 }
 
 class BinarySearchTree {
@@ -53,17 +77,17 @@ class BinarySearchTree {
             const _traverse = (node) => {
 
                 if (data > node.value) {
-                    if ( node.right == null ) {
+                    if (node.right == null) {
                         node.right = nNode;
                     }
                     _traverse(node.right);
-                } else 
-                if (data < node.value) {
-                    if (node.left == null) {
-                        node.left = nNode;
+                } else
+                    if (data < node.value) {
+                        if (node.left == null) {
+                            node.left = nNode;
+                        }
+                        _traverse(node.left);
                     }
-                    _traverse(node.left);
-                } 
             };
 
             _traverse(this.root);
@@ -72,9 +96,9 @@ class BinarySearchTree {
 
     contains(value) {
         let node = this.root;
-        let traverse = function(node) {
+        let traverse = function (node) {
             if (!node)
-             return 'empty';
+                return 'empty';
             if (value == node.value) {
                 return true;
             } else if (value > node.value) {
@@ -86,5 +110,26 @@ class BinarySearchTree {
         return traverse(node);
     }
 }
+
+
+// const one = new Node(1);
+// const two = new Node(2);
+// const three = new Node(3);
+// const four = new Node(4);
+// const five = new Node(1555);
+// const six = new Node(6555);
+// const seven = new Node(7);
+// const eight = new Node(8);
+// one.left = two;
+// one.right = three;
+// two.left = four;
+// two.right = five;
+// five.left = eight;
+// three.left = six;
+// three.right = seven;
+// let tree = new BinaryTree(one);
+
+
+// console.log(tree.findMaximumValue());
 
 module.exports = { BinaryTree, BinarySearchTree };

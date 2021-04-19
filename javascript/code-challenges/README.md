@@ -16,3 +16,4 @@
 | #9 | queue-with-stacks    | [queue-with-stacks](./queueWithStacks/README.md)|
 | #10 | Animal_Shelter    | [Animal_Shelter](./fifoAnimalShelter/README.md)|
 | #11 | multi-bracket-validation | [multi-bracket-validation](./multiBracketValidation/README.md)
+| #12 |  find-maximum-value | [maximum](./tree/README.md)| |
