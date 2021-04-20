@@ -1,5 +1,7 @@
 'use strict';
+const { root } = require('cheerio');
 const Node = require('./node.js');
+const { Queue } = require('../stacksAndQueues/stacks-and-queues.js');
 
 class BinaryTree {
     constructor(root = null) {
@@ -62,6 +64,31 @@ class BinaryTree {
         }
         return findMax();
     }
+
+    breadthFirs() {
+        let node = this.root;
+        let binaryTree = new Queue();
+
+        if (!node) {
+            return 'empty tree';
+        }
+
+        binaryTree.enqueue(node);
+        let arr = [];
+
+        while (binaryTree.front) {
+            node = binaryTree.dequeue();
+            arr.push(node.value);
+
+            if (node.left)
+                binaryTree.enqueue(node.left);
+
+            if (node.right)
+                binaryTree.enqueue(node.right);
+        }
+
+        return arr;
+    }
 }
 
 class BinarySearchTree {
@@ -111,13 +138,12 @@ class BinarySearchTree {
     }
 }
 
-
 // const one = new Node(1);
 // const two = new Node(2);
 // const three = new Node(3);
 // const four = new Node(4);
-// const five = new Node(1555);
-// const six = new Node(6555);
+// const five = new Node(5);
+// const six = new Node(6);
 // const seven = new Node(7);
 // const eight = new Node(8);
 // one.left = two;
@@ -129,7 +155,8 @@ class BinarySearchTree {
 // three.right = seven;
 // let tree = new BinaryTree(one);
 
-
 // console.log(tree.findMaximumValue());
+
+// console.log(tree.breadthFirs());
 
 module.exports = { BinaryTree, BinarySearchTree };
