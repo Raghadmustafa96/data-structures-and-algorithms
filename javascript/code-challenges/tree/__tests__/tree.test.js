@@ -43,6 +43,10 @@ describe('Binary Tree', () => {
   it('should return the max value in binary tree', () => {
     expect(tree.findMaximumValue()).toEqual(8);
   });
+
+  it('should traverse the input tree using a Breadth-first approach', () => {
+    expect(tree.breadthFirs()).toEqual([1,2,3,4,5,6,7,8]);
+  });
 });
 
 describe('Binary Search Tree', () => {
