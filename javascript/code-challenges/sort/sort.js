@@ -18,6 +18,6 @@ function SelectionSort(arr) {
     return arr;
 }
 
-// module.exports = SelectionSort;
-    let arr1 = [8,4,23,42,16,15];
-    console.log(SelectionSort(arr1));
+module.exports = SelectionSort;
+    // let arr1 = [8,4,23,42,16,15];
+    // console.log(SelectionSort(arr1));
