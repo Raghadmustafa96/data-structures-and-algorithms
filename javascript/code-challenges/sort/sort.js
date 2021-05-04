@@ -15,3 +15,4 @@ function InsertionSort(arr){
 module.exports = InsertionSort;
     // let arr1 = [8,4,23,42,16,15];
     // console.log(SelectionSort(arr1));
+    
