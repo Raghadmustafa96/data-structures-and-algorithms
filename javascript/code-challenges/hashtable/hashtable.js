@@ -23,7 +23,6 @@ const LinkedList = require('../Data-Structures/linkedList/linked-list.js');
   
     find(key) {
         let hash = this.getHash(key);
-    console.log(this.table[hash]);
         if (this.table[hash] === undefined) {
             return null;
         } 
