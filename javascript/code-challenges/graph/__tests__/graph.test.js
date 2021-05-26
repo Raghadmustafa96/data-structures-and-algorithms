@@ -11,7 +11,7 @@ describe('testing the instantiating of a proper graph', () => {
   it('Node can be successfully added to the graph', () => {
     graph.addVertex(one);
 
-    expect(graph.size(one)).toEqual(1);
+    expect(graph.getSize(one)).toEqual(1);
   });
 
   it('An edge can be successfully added to the graph', () => {
@@ -48,6 +48,6 @@ describe('testing the instantiating of a proper graph', () => {
 
   it('An empty graph properly returns null', () => {
     const graphThree = new test.Graph();
-    expect(graphThree.size(null)).toEqual(null);
+    expect(graphThree.getSize(null)).toEqual(null);
   });
 });
